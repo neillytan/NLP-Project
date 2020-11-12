@@ -13,5 +13,9 @@ def word_idx(word_list):
     word_set = set(word_list)
     word_df = pd.DataFrame(word_set, columns=['word'])
     word_to_idx = {}
-    word_to_idx = {**word_to_idx, **dict(zip(word_df['word'], np.arange(len(word_df))))}
+    word_to_idx = {
+    	**word_to_idx, 
+    	**dict(zip(word_df['word'], 
+    	np.arange(len(word_df))))
+    	}
     return word_df, word_to_idx
