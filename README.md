@@ -16,7 +16,7 @@ Here are instructions to locally install this program. Install [conda](https://d
 2. Create a conda environment: `conda env create -q -n nlp-project --file environment.yml`
 3. Activate the environment: `conda activate nlp-project`
 4. Run the jupyter notebook demo: `jupyter notebook demo.ipynb` --> *See note below*
-5. Once you have opened the notebook, replace the `input` variable with your own text file/ input corpus. Then, input your desired output word length in the variable `seq_length` for the gready decoder. 
+5. Once you have opened the notebook, replace the `input` variable with your own text file. Then, input your desired output word length in the variable `seq_length` for the gready decoder. 
 
 **Note:** We are working to export the Jupyter notebook into separate modules. These instructions will change in the upcoming week. 
 
@@ -59,7 +59,7 @@ NLP-Project/
 ```
 
 ## Project Data 
-For this project, we are using text from Project Gutenburg, specifically a collection of poems by Emily Dickinson and 
+For this project, we are using text from Project Gutenburg, specifically a collection of poems by Emily Dickinson and John Keats.
 
 ## Project History 
 This project was made in Autumn 2020 as part of the CSE 583 course at the University of Washington.
