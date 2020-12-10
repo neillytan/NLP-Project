@@ -11,8 +11,7 @@ To this end, we seek to investigate how to better understand natural language pr
 * Zhan Shi
 
 ## Installation
-Here are instructions to locally install this program:
-0. Install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you have not already done so.
+Here are instructions to locally install this program. Install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you have not already done so.
 1. Clone the repository: `git clone https://github.com/neillytan/NLP-Project.git`
 2. Create a conda environment: `conda env create -q -n nlp-project --file environment.yml`
 3. Activate the environment: `conda activate nlp-project`
