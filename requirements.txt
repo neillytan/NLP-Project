@@ -1,7 +1,5 @@
 ## dependencies
 
-os
-sys
 matplotlib
 numpy
 pandas
