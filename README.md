@@ -54,8 +54,6 @@ NLP-Project/
 │   └── procedural-specs.ipynb
 ├── requirements.txt
 └── src
-
-
 ```
 
 ## Project Data 
