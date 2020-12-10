@@ -1,6 +1,5 @@
 ## dependencies
 
-math
 os
 sys
 matplotlib
