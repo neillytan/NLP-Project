@@ -6,7 +6,8 @@ from mxnet.gluon import nn, rnn
 from NLP.src.training import utils
 
     
-def train(train_data, args_epochs, args_batch_size, context, trainer):
+def train(train_data, model, loss, args_epochs, args_batch_size, 
+    context, trainer):
     loss_progress = []
     for epoch in range(args_epochs):
         total_L = 0.0
@@ -17,7 +18,7 @@ def train(train_data, args_epochs, args_batch_size, context, trainer):
             #hidden = detach(hidden)
             with autograd.record():
                 output, hidden = model(data, hidden)
-                L = utils.loss(output, target)
+                L = loss(output, target)
                 L.backward()
 
             trainer.step(args_batch_size)

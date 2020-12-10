@@ -19,7 +19,7 @@ def get_batch(source, i):
     return data.reshape((1,len(data))), target.reshape((-1,))
 
 # Compute loss from data_source and the current net
-def eval(data_source, loss, context=mx.cpu()):
+def eval(data_source, model, loss, context=mx.cpu()):
     """
     Compute loss using passed loss function on data_source
     The data passed in is assumed to be of shape

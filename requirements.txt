@@ -1,6 +1,11 @@
 ## dependencies
 
+math
+os
+sys
+matplotlib
 numpy
 pandas
-pytorch
+mxnet
 gensim
+nltk
