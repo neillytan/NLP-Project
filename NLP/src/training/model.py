@@ -1,7 +1,5 @@
-import numpy as np
 import mxnet as mx
-import matplotlib.pyplot as plt
-from mxnet import gluon, autograd
+from mxnet import gluon
 from mxnet.gluon import nn, rnn
 
 
@@ -14,7 +12,7 @@ class RNNModel(gluon.Block):
         with self.name_scope():
             self.drop = nn.Dropout(dropout)
             self.encoder = nn.Embedding(vocab_size, num_embed,
-                                        weight_initializer = mx.init.Uniform(0.1))
+                                        weight_initializer=mx.init.Uniform(0.1))
             if mode == 'rnn_relu':
                 self.rnn = rnn.RNN(num_hidden, num_layers, activation='relu', dropout=dropout,
                                    input_size=num_embed)
@@ -29,17 +27,16 @@ class RNNModel(gluon.Block):
                                    input_size=num_embed)
             else:
                 raise ValueError("Invalid mode %s. Options are rnn_relu, "
-                                 "rnn_tanh, lstm, and gru"%mode)
+                                 "rnn_tanh, lstm, and gru" % mode)
             if tie_weights:
-                self.decoder = nn.Dense(vocab_size, in_units = num_hidden,
-                                        params = self.encoder.params)
+                self.decoder = nn.Dense(vocab_size, in_units=num_hidden,
+                                        params=self.encoder.params)
             else:
-                self.decoder = nn.Dense(vocab_size, in_units = num_hidden)
+                self.decoder = nn.Dense(vocab_size, in_units=num_hidden)
             self.num_hidden = num_hidden
 
     def forward(self, inputs, hidden):
         emb = self.drop(self.encoder(inputs))
-        #print(emb)
         output, hidden = self.rnn(emb, hidden)
         output = self.drop(output)
         decoded = self.decoder(output.reshape((-1, self.num_hidden)))

@@ -46,10 +46,10 @@ class UnitTests(unittest.TestCase):
                             {'learning_rate': args_lr, 'momentum': 0, 'wd': 0})
         loss = gluon.loss.SoftmaxCrossEntropyLoss()
         try:
-            training.train(train_data=train_data, model=model_, 
-                trainer=trainer, loss=loss, args_epochs=args_epochs, 
-                args_batch_size=args_batch_size,
-                context=context)
+            training.train(train_data=train_data, model=model_,
+                           trainer=trainer, loss=loss, epochs=args_epochs,
+                           batch_size=args_batch_size,
+                           context=context)
             self.assertTrue(True)
         except:
             self.assertTrue(False)
