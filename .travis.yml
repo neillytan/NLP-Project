@@ -11,7 +11,8 @@ branches:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install -r coverage coveralls flake8
+  - pip install -U coveralls flake8
+#coverage coveralls flake8
 
 # command to run tests
 script:
