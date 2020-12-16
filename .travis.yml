@@ -14,6 +14,9 @@ install:
   - pip install -U coveralls flake8
 #coverage coveralls flake8
 
+before_script:
+  - "flake8 codebase"
+
 # command to run tests
 script:
   - coverage run -m unittest discover tests
