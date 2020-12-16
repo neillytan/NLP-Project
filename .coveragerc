@@ -1,0 +1,15 @@
+[report]
+
+# Files to leave out of reporting
+omit =  
+    */python?.?/*
+    */site-packages/nose/*
+    *__init__*
+    *requirements.txt*
+	
+# Ignore if non-runnable code isn’t run
+exclude_lines =
+    if 0:
+    if __name__ == .__main__.:
+
+ignore_errors = True

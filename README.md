@@ -1,4 +1,6 @@
 # NLP-Project
+[![Build Status](https://travis-ci.com/travis-ci/travis-web.svg?branch=master)](https://travis-ci.com/travis-ci/travis-web)
+[![Coverage Status](https://coveralls.io/repos/github/neillytan/NLP-Project/badge.svg?branch=main)](https://coveralls.io/github/neillytan/NLP-Project?branch=main)
 
 ## Background
 Natural language processing affords new possibilities for sentiment analysis of text. This is especially beneficial in everyday scenarios when interacting with any chatbot: for example, when asking Siri for weather updates or interfacing with a customer service bot.
