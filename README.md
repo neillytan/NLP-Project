@@ -76,5 +76,5 @@ For this project, we are using text from Project Gutenburg, specifically a colle
 ## Project History 
 This project was made in Autumn 2020 as part of the CSE 583 course at the University of Washington.
 
-## Future Work
-If time allows, we aim to add a Twitter bot to this program. 
+## Limitations
+This repository will not be maintained after 2020.  
