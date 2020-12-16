@@ -1,6 +1,6 @@
-'''
-Test functionality of knn regression module
-'''
+"""
+Test functionality of training module, specifically the model.py and training.py
+"""
 import unittest
 import os,sys,inspect
 import numpy as np
@@ -15,15 +15,14 @@ from NLP.src.training import model, training, utils
 
 
 class UnitTests(unittest.TestCase):
-    '''
+    """
     Test functionality of src/training/utils.py
-    '''
+    """
     # Each method in the class to execute a test
     def test_training_end_to_end(self):
-        '''
-        test that the batchify method produces correct
-        output dimension
-        '''
+        """
+        test that the training method works and does not throw exception
+        """
         context = mx.cpu()
         seq = mx.nd.array(np.arange(100))
         vocab_size = 100

@@ -1,6 +1,6 @@
-'''
-Test functionality of knn regression module
-'''
+"""
+Test functionality of training/utils.py
+"""
 import unittest
 import os,sys,inspect
 import numpy as np
@@ -13,25 +13,25 @@ sys.path.insert(0,parentdir)
 from NLP.src.training import utils
 
 class UnitTests(unittest.TestCase):
-    '''
+    """
     Test functionality of src/training/utils.py
-    '''
+    """
     # Each method in the class to execute a test
     def test_batchify_correct_dimension(self):
-        '''
+        """
         test that the batchify method produces correct
         output dimension
-        '''
+        """
         data = mx.ndarray.ones(100)
         batch_size = 2
         res = utils.batchify(data, batch_size)
         self.assertEqual(res.shape, (50, 2))
 
     def test_get_batch_correct_output(self):
-        '''
+        """
         test that the get_batch returns the correct
         batch data and target
-        '''
+        """
         data = mx.nd.array([[1,2,3],[4,5,6]])
 
         res = utils.get_batch(data, 0)
