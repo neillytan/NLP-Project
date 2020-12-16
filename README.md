@@ -27,6 +27,7 @@ The directory has folders for docs and NLP (which includes our source code).
 
 ## Directory Structure
 ```
+NLP-Project
 ├── LICENSE
 ├── NLP
 │   ├── __init__.py
