@@ -25,35 +25,46 @@ The directory has folders for docs and NLP (which includes our source code).
 
 ## Directory Structure
 ```
-NLP-Project/
+├── LICENSE
 ├── NLP
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   └── __init__.cpython-37.pyc
 │   └── src
+│       ├── decoder
+│       │   ├── __init__.py
+│       │   └── decoder.py
+│       ├── generator
+│       │   ├── __init__.py
+│       │   └── generator.py
 │       ├── pre_processing
 │       │   ├── __init__.py
-│       │   ├── pre.py
-│       │   ├── pre_processing.py
+│       │   ├── pre_process.py
 │       │   └── text.txt
 │       └── training
 │           ├── __init__.py
-│           ├── __pycache__
-│           │   ├── __init__.cpython-37.pyc
-│           │   ├── training.cpython-37.pyc
-│           │   └── utils.cpython-37.pyc
 │           ├── model.py
 │           ├── training.py
 │           └── utils.py
 ├── README.md
-├── demo.ipynb
+├── __init__.py
+├── data
+│   └── sample_txt.txt
+├── demos
+│   ├── Demo_.ipynb
+│   └── demo_old.ipynb
 ├── docs
 │   ├── CSE583_tech_review.pdf
+│   ├── Demo.html
 │   ├── component-flowchart.jpeg
 │   ├── component-specs.ipynb
 │   └── procedural-specs.ipynb
 ├── requirements.txt
-└── src
+├── setup.py
+└── tests
+    ├── __init__.py
+    ├── test_decoder_end_to_end.py
+    ├── test_generator_end_to_end.py
+    ├── test_training_end_to_end.py
+    └── test_training_utils.py
 ```
 
 ## Project Data 
