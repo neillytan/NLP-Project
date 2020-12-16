@@ -11,7 +11,7 @@ branches:
 # command to install dependencies
 install:
   - pip install -yes --file requirements.txt
-  - conda install --yes coverage coveralls flake8
+  - pip install --yes coverage coveralls flake8
 
 # command to run tests
 script:
