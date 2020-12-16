@@ -1,12 +1,23 @@
 language: python
 python:
-  - "3.5"
   - "3.6" # current default Python on Travis CI
   - "3.7"
   - "3.8"
+
+branches:
+  only:
+    - main
+
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - conda install -r requirements.txt
+  - conda install --yes coverage coveralls flake8
+
 # command to run tests
 script:
-  - python -m unittest discover tests
+  - coverage run -m unittest discover
+
+# generate coverage report
+after_success:
+  - coverage report
+  - coveralls
