@@ -14,6 +14,7 @@ class Generator:
 
     def __init__(self, input_path, epoch=30, rnn_type='gru', num_embed=5,
                  num_hidden=5, num_layers=2, dropout=0, lr=1, batch_size=32,
+                 use_pretrained_embedding=False, freeze_embedding=False, tie_weights=False,
                  context=mx.cpu()):
         """
         param input_path: path of input corpus
@@ -25,6 +26,11 @@ class Generator:
         param dropout: between 0 and 1, dropout probability
         param lr: learning rate of sgd (current version defaults to sgd trainer)
         param batch_size: batch size
+        param use_pretrained_embedding: use pretrained GloVe embeddings to initialize
+            the input embedding layer
+        param freeze_embedding: freeze training of embedding layers (input and output).
+            Only do this when use_pretrained_embedding=True and tie_weights=True!
+        param tie_weights: tie weights on input and output embedding layers
         param context: cpu (default) or gpu
         """
         self.context = context
@@ -33,15 +39,26 @@ class Generator:
         self.vocab_size = len(self.word_idx)
 
         train_data = utils.batchify(self.seq, batch_size).as_in_context(self.context)
+        if use_pretrained_embedding:
+            # we use 25 dimensional pretrained embedding, so force this to 25
+            num_embed = 25
+
         self.model_ = model.RNNModel(mode=rnn_type, vocab_size=self.vocab_size,
                                      num_embed=num_embed, num_hidden=num_hidden,
-                                     num_layers=num_layers, dropout=dropout)
+                                     num_layers=num_layers, dropout=dropout,
+                                     tie_weights=tie_weights)
         self.model_.collect_params().initialize(mx.init.Xavier(), ctx=self.context)
+
+        if use_pretrained_embedding:
+            embedding_weights = utils.get_pretrained_weights(self.idx_word)
+            self.model_.encoder.weight.set_data(embedding_weights)
+
         trainer = gluon.Trainer(self.model_.collect_params(), 'sgd',
                                 {'learning_rate': lr, 'momentum': 0, 'wd': 0})
         loss = gluon.loss.SoftmaxCrossEntropyLoss()
         training.train(train_data=train_data, model=self.model_, trainer=trainer,
                        loss=loss, epochs=epoch, batch_size=batch_size,
+                       freeze_embedding=freeze_embedding,
                        context=self.context)
 
     def decode(self, input_seq, decoder_mode='greedy', output_length=1,

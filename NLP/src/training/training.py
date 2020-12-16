@@ -7,7 +7,7 @@ from NLP.src.training import utils
 
 
 def train(train_data, model, loss, epochs, batch_size,
-          context, trainer):
+          context, trainer, freeze_embedding=False):
     """
     Train an RNN model, given the input list
     param train_data: training data, 2D mx array of size (n, batch_size)
@@ -17,7 +17,13 @@ def train(train_data, model, loss, epochs, batch_size,
     param batch_size: batch size
     param context: cpu or (which) gpu
     param trainer: trainer (optimizer)
+    param freeze_embedding: freeze training of embedding layers (input and output)
     """
+    if freeze_embedding:
+        for param in model.encoder.collect_params().values():
+            param.grad_req = 'null'
+        for param in model.decoder.collect_params().values():
+            param.grad_req = 'null'
     loss_progress = []
     for epoch in range(epochs):
         total_loss = 0.0

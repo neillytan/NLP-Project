@@ -1,3 +1,6 @@
+import mxnet as mx
+import gensim.downloader as api
+
 def batchify(data, batch_size):
     """
     Reshape data into (num_example, batch_size)
@@ -22,3 +25,28 @@ def get_batch(source, i):
     data = source[i]
     target = source[i + 1]
     return data.reshape((1, len(data))), target.reshape((-1,))
+
+def get_pretrained_weights(idx_word):
+    """
+    Generate the weight matrix using pretrained GloVe embeddings
+    ('glove-twitter-25')
+    param idx_word: integer -> word mapping for the RNN
+    return: mx array of the weight matrix using pretrained GloVe embeddings
+    """
+    n = len(idx_word)
+    embed_dim = 25
+    weights = mx.ndarray.zeros((n, embed_dim))
+    print('Start downloading pre-trained vectors, this will take some time')
+    glov = api.load("glove-twitter-25")
+    print('Pre-trained vectors downloading complete')
+    not_in_vocab = 0
+    for i in range(n):
+        word = idx_word[i]
+        try:
+            weights[i] = glov[word]
+        except: #if not in glove vocabulary
+            not_in_vocab += 1
+            weights[i] = mx.nd.random.normal(0, 0.1, embed_dim)
+    if not_in_vocab > 0:
+        print('Warning: {} words not in vocab of pretrained embeddings (glove-twitter-25)'.format(not_in_vocab))
+    return weights
