@@ -39,5 +39,16 @@ class UnitTests(unittest.TestCase):
         np.testing.assert_array_equal(batch, [[1,2,3]])
         np.testing.assert_array_equal(target, [4,5,6])
 
+    def test_pre_trained_embeddings(self):
+        """
+        Test if the pre trained embeddings load
+        """
+        idx_word = {0:'word', 1: 'she', 2: 'not'}
+        try:
+            utils.get_pretrained_weights(idx_word)
+            self.assertTrue(True)
+        except:
+            self.assertTrue(False)
+
 if __name__ == '__main__':
     unittest.main()
