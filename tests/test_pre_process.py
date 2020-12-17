@@ -15,6 +15,8 @@ class UnitTests(unittest.TestCase):
     Tests functionality of tokenize_file functionality
     """
     def test_tokenize_file(self):
+        with open("text.txt", "w") as text_file:
+            print("two words two", file=text_file)
         result = pre_process.tokenize_file('text.txt')
         exp_result = ['two', 'words', 'two']
         self.assertEqual(result, exp_result)
@@ -23,9 +25,18 @@ class UnitTests(unittest.TestCase):
     Test functionality of pre_process
     """
     def test_pre_process(self):
+        with open("text.txt", "w") as text_file:
+            print("two words two", file=text_file)
         r1, r2, r3 = pre_process.pre_process('text.txt')
         self.assertEqual(r1[0], r1[2])
         self.assertNotEqual(r1[0], r1[1])
+
+    def test_tokenize_stop_words(self):
+        with open("text.txt", "w") as text_file:
+            print("two,.! words !$ Two", file=text_file)
+        result = pre_process.tokenize_file('text.txt')
+        exp_result = ['two', 'words', 'two']
+        self.assertEqual(result, exp_result)
 
 if __name__== '__main__':
     unittest.main()
