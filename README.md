@@ -17,8 +17,8 @@ Here are instructions to locally install this program.
 1. Clone the repository: `git clone https://github.com/neillytan/NLP-Project.git`
 2. Install the requirements: ``pip install -r requirements.txt``
 3. Navigate to the examples folder `cd examples`. Here, you will see example demos of how to run this program and along with our explanation of the NLP training model.
-4. Run the jupyter notebook demo `jupyter notebook Demo_.ipynb` or follow the html `open Demo.html`
-5. Once you have opened the notebook or html page, replace the input variable (`sample_txt.txt`) with your own text file. Then, you can specify some options for you output text in code under the header, `Decoder Options`. Here, you can specify different output lengths for your NLP generated poem, for example.
+4. Run the jupyter notebook demo `jupyter notebook demo.ipynb` or explore our process through the html `open demo.html`
+5. Once you have opened the notebook or html page, replace the input variable (`sample_txt.txt`) with your own text file. Then, you can specify some options for your output text in code under the header, **Decoder Options**. Here, you can specify different output lengths for your NLP generated poem, for example.
 
 ## Directory Summary
 The directory has folders for NLP, docs, examples, and tests. **NLP** contains our data and source code (including the decoder, genator, and training modules). **Docs** includes documents such as specifications and presentations. **Examples** includes our demos, and **Tests** includes files for our test cases. 
@@ -50,7 +50,6 @@ NLP-Project
 │           ├── training.py
 │           └── utils.py
 ├── README.md
-├── __init__.py
 ├── docs
 │   ├── component-flowchart.jpeg
 │   ├── component-specs.md
