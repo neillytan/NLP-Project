@@ -12,15 +12,14 @@ To this end, we seek to investigate how to better understand natural language pr
 * Neilly Herrera Tan
 * Zhan Shi
 
-## Installation
+## Running the program
 Here are instructions to locally install this program. Install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) if you have not already done so.
 1. Clone the repository: `git clone https://github.com/neillytan/NLP-Project.git`
 2. Create a conda environment: `conda env create -q -n nlp-project --file environment.yml`
 3. Activate the environment: `conda activate nlp-project`
-4. Run the jupyter notebook demo: `jupyter notebook demo.ipynb` --> *See note below*
+4. Run the jupyter notebook demo: `jupyter notebook demo.ipynb` 
 5. Once you have opened the notebook, replace the `input` variable with your own text file. Then, input your desired output word length in the variable `seq_length` for the gready decoder. 
 
-**Note:** We are working to export the Jupyter notebook into separate modules. These instructions will change in the upcoming week. 
 
 ## Directory Summary
 The directory has folders for docs and NLP (which includes our source code).
