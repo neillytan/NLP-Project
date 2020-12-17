@@ -80,4 +80,4 @@ For this project, we are using text from Project Gutenburg, specifically collect
 * [Poems by Emily Dickinson](http://www.gutenberg.org/cache/epub/2678/pg2678.txt) ``NLP/data/sample-txt-3.txt``
 
 ## Project History 
-This project was made in Autumn 2020 as part of the CSE 583 course at the University of Washington. This repository will not be maintained beyond 2020.  
+This project was made in Autumn 2020 as part of the CSE 583 course at the University of Washington.
