@@ -3,7 +3,7 @@
 
 Component flowchart:
 <img src= "component-flowchart.jpeg">
-Here, the pipeline is broken down into three main parts: Preprocessing, Training, and Decoding. Generally, the program takes an input corpus ``input`` (any .txt file), and generates a word list ``output``. Here, the input is passed into a vectorizer that maps the words onto vectors during the Preprocessing stage. Then, the input will train the language model (Training), and decode this model (Decoding) to generate a fake text output.
+Here, the pipeline is broken down into three main parts: Preprocessing, Training, and Decoding. Generally, the program takes an input corpus ``input`` (any .txt file), and generates a word list ``output``. Here, the input list is passed into a vectorizer that maps the words onto vectors during the Preprocessing stage. Then, these vectors are used to train the language model (Training), and decode this model (Decoding) to generate a fake text output.
 
 **Novel packages used:**
 * MxNet, an easy to use and customizable deep learning package.

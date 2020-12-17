@@ -21,7 +21,7 @@ Here are instructions to locally install this program.
 5. Once you have opened the notebook or html page, replace the input variable (`sample_txt.txt`) with your own text file. Then, you can specify some options for you output text in code under the header, `Decoder Options`. Here, you can specify different output lengths for your NLP generated poem, for example.
 
 ## Directory Summary
-The directory has folders for docs and NLP (which includes our source code).
+The directory has folders for NLP, docs, examples, and tests. **NLP** contains our data and source code (including the decoder, genator, and training modules). **Docs** includes documents such as specifications and presentations. **Examples** includes our demos, and **Tests** includes files for our test cases. 
 
 ## Directory Structure
 ```
@@ -52,12 +52,12 @@ NLP-Project
 ├── README.md
 ├── __init__.py
 ├── docs
-│   ├── CSE583_tech_review.pdf
-│   ├── component-specs.ipynb
+│   ├── component-flowchart.jpeg
 │   ├── component-specs.md
-│   ├── img
-│   │   └── component-flowchart.jpeg
-│   └── procedural-specs.md
+│   ├── final-presentation.pdf
+│   ├── procedural-specs.md
+│   ├── project-preview.pdf
+│   └── tech-review.pdf
 ├── examples
 │   ├── Demo.html
 │   ├── Demo_.ipynb
@@ -81,7 +81,4 @@ For this project, we are using text from Project Gutenburg, specifically collect
 * [Poems by Emily Dickinson](http://www.gutenberg.org/cache/epub/2678/pg2678.txt) ``NLP/data/sample-txt-3.txt``
 
 ## Project History 
-This project was made in Autumn 2020 as part of the CSE 583 course at the University of Washington.
-
-## Limitations
-This repository will not be maintained after 2020.  
+This project was made in Autumn 2020 as part of the CSE 583 course at the University of Washington. This repository will not be maintained beyond 2020.  
