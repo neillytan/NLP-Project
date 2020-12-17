@@ -15,7 +15,7 @@ To this end, we seek to investigate how to better understand natural language pr
 _Scenario:_ An aspiring poet herself, Dara is Emily Dickinson's number one fan. She has read through all of Emily Dickinson's poems. However, Dara wants to read more, and wants to know how to incorporate a similar Dickinsonian style to her own poetry. To figure out the essence of Emily Dickinson's poems, and to read more work that emulates Emily Dickinson's work, Dara runs this program with sample texts from her favorite Dickonson poems. 
 
 ### Data sources
-We will use input data from a collection of poems via Project Gutenberg, on their [poetry bookshelf](http://www.gutenberg.org/ebooks/bookshelf/60).
+We will use input data from a collection of poems via Project Gutenberg, on their [poetry bookshelf](http://www.gutenberg.org/ebooks/bookshelf/60). These are all .txt files. 
 * [Poems by TS Eliot](http://www.gutenberg.org/cache/epub/1567/pg1567.txt)
 * [Poems by John Keats](http://www.gutenberg.org/cache/epub/2490/pg2490.txt)
 * [Poems by Emily Dickinson](http://www.gutenberg.org/cache/epub/2678/pg2678.txt)
