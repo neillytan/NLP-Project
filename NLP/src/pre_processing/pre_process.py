@@ -15,4 +15,5 @@ def pre_process(file_path):
     words_to_ints = {w: i for i, w in enumerate(word_set)}
     ints_to_words = {val: key for key, val in words_to_ints.items()}
     input_list = [words_to_ints[w] for w in word_list]
-    return input_list, words_to_ints, ints_to_words
+    r1,r2,r3 = input_list, words_to_ints, ints_to_words
+    return r1,r2,r3
