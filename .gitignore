@@ -2,3 +2,6 @@
 .DS_Store?
 vnev/
 vnev_python3/
+
+.ipynb_checkpoints/*
+.idea/
