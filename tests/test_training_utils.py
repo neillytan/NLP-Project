@@ -39,7 +39,5 @@ class UnitTests(unittest.TestCase):
         np.testing.assert_array_equal(batch, [[1,2,3]])
         np.testing.assert_array_equal(target, [4,5,6])
 
-    # TODO: test and handle edge cases
-
 if __name__ == '__main__':
     unittest.main()
